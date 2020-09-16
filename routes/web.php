@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+ Route::get('/', function () {
+      return view('vuesample');
+ });
+ 
+ Route::get('/barcode', function () {
+      return view('barcodesample');
+ }); 
+
+Route::get('/home/test', function () {
+     return view('welcome');
 });

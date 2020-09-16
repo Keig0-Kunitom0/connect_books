@@ -11,5 +11,15 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+// すべての画面に適用するものを記載
+// layout.appで読み取り
+mix.js('resources/js/app.js', 'public/js');
+
+// バーコード画面で必要
+// 各ブレードのsection('script')に記載。layout.appのyeildでhtmlファイルの最後に追加
+mix.js('resources/js/barcode.js', 'public/js');
+
+// 検索画面で必要
+mix.js('resources/js/search.js', 'public/js');
+
+//    .sass('resources/sass/app.scss', 'public/css');
