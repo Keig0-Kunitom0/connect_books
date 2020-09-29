@@ -21,6 +21,7 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "quagga": "^0.12.1",
         "vue": "^2.6.12",
         "vue-barcode-reader": "0.0.3"
     }

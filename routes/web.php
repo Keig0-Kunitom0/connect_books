@@ -12,13 +12,13 @@
 */
 
  Route::get('/', function () {
-      return view('vuesample');
+      return view('welcome');
  });
  
- Route::get('/barcode', function () {
-      return view('barcodesample');
- }); 
+ // Route::get('/barcode', function () {
+ //      return view('barcodesample');
+ // }); 
 
-Route::get('/home/test', function () {
-     return view('welcome');
-});
+// Route::get('/home/test', function () {
+//      return view('welcome');
+// });

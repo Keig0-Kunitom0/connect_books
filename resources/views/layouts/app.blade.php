@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>@yield('title')|Connect_Books</title>
+    <title>Connect_Books</title>
     <meta name="description" content="@yield('description')">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href="site.webmanifest">
+    <!--<link rel="manifest" href="site.webmanifest">-->
     <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.ico">
 
     <!-- CSS here -->
@@ -27,13 +27,12 @@
     @yield('pageCss')
 </head>
 <body class="full-wrapper">
-     @yield('header')
+     @include('commons.navbar')
 <main>
     <div class="new-arrival">
-      @yield('container')
+      @yield('content')
     </div>
 </main>
-@yield('footer')
 <div id="back-top" >
     <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
 </div>
