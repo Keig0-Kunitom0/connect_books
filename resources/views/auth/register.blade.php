@@ -31,27 +31,27 @@
                 
                 <div class="form-group">
                     {!! Form::label('post_code', '郵便番号') !!}
-                    {!! Form::email('post_code', old('post_code'), ['class' => 'form-control']) !!}
+                    {!! Form::text('post_code', old('post_code'), ['class' => 'form-control']) !!}
                 </div>
                 
                 <div class="form-group">
                     {!! Form::label('prefecture', '都道府県') !!}
-                    {!! Form::email('prefecture', old('prefecture'), ['class' => 'form-control']) !!}
+                    {!! Form::text('prefecture', old('prefecture'), ['class' => 'form-control']) !!}
                 </div>
                 
                 <div class="form-group">
                     {!! Form::label('city', '市区町村') !!}
-                    {!! Form::email('city', old('city'), ['class' => 'form-control']) !!}
+                    {!! Form::text('city', old('city'), ['class' => 'form-control']) !!}
                 </div>
                 
                 <div class="form-group">
                     {!! Form::label('housse_number', '番地') !!}
-                    {!! Form::email('housse_number', old('housse_number'), ['class' => 'form-control']) !!}
+                    {!! Form::text('housse_number', old('housse_number'), ['class' => 'form-control']) !!}
                 </div>
                 
                 <div class="form-group">
                     {!! Form::label('building_name', '建物名') !!}
-                    {!! Form::email('building_name', old('building_name'), ['class' => 'form-control']) !!}
+                    {!! Form::text('building_name', old('building_name'), ['class' => 'form-control']) !!}
                 </div>
                 
                 <div class="form-group">
