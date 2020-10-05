@@ -30,6 +30,6 @@ Route::group(['middleware' => ['auth']], function () {
  //      return view('barcodesample');
  // }); 
 
- // Route::get('/home/test', function () {
- //      return view('sample.vuesample');
- // });
+  Route::get('/home/test', function () {
+       return view('books.books');
+  });

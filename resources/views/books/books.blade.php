@@ -8,7 +8,7 @@
 <!-- Search Box -->
     <div class="search d-none d-md-block">
         <ul class="d-flex align-items-center">
-            <li class="mr-15">
+            <li class="center-block">
                 <div class="nav-search search-switch">
                     <i class="ti-search"></i>
                 </div>
