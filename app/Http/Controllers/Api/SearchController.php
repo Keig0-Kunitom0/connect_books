@@ -4,12 +4,13 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Book;
 
 class SearchController extends Controller
 {
-    public function search(Request $request) {
+    public function search(Request $request) 
+    {
         //dd($request);
-        
         
         
         $url = 'https://app.rakuten.co.jp/services/api/BooksBook/Search/20170404';
@@ -29,12 +30,11 @@ class SearchController extends Controller
         
         $result = file_get_contents($search_url);
         //dd($result);
-
+        
         if($result){
             return json_decode($result, true);
         }else{
             return [];
         }
-        
     }
 }

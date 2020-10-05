@@ -2,7 +2,11 @@
 
 @section('content')
     @if (Auth::check())
-        {{ Auth::user()->name }}
+        <div id="app">
+            <search-modelbox @hogehoge="search"></search-modelbox>
+                <!--結果一覧の表示のコンポーネント -->
+                <search-result :search-text="searchText"></search-result>
+        </div>
     @else
         <div class="center jumbotron">
             <div class="text-center">
@@ -12,4 +16,8 @@
             </div>
         </div>
     @endif
+@endsection
+
+@section('script')
+<script src="{{ mix('js/search.js') }}"></script>
 @endsection
