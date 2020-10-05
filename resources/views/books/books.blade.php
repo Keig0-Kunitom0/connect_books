@@ -16,3 +16,5 @@
         </ul>
     </div>
 </div>
+
+<script src="{{ mix('js/search.js') }}"></script>

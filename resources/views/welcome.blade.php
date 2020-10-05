@@ -14,6 +14,3 @@
     @endif
 @endsection
 
-@section('script')
-<script src="{{ mix('js/search.js') }}"></script>
-@endsection
