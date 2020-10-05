@@ -30,6 +30,9 @@
      @include('commons.navbar')
 <main>
     <div class="new-arrival">
+      {{-- エラーメッセージ --}}
+      @include('commons.error_messages')
+        
       @yield('content')
     </div>
 </main>
