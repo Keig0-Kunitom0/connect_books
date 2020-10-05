@@ -11,9 +11,8 @@
 |
 */
 
- Route::get('/', function () {
-      return view('welcome');
- });
+ Route::get('/', 'BooksController@books');
+ 
  
 Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');
 Route::post('signup', 'Auth\RegisterController@register')->name('signup.post');
@@ -31,6 +30,6 @@ Route::group(['middleware' => ['auth']], function () {
  //      return view('barcodesample');
  // }); 
 
-// Route::get('/home/test', function () {
-//      return view('welcome');
-// });
+ // Route::get('/home/test', function () {
+ //      return view('sample.vuesample');
+ // });
