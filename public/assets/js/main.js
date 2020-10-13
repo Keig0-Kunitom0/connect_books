@@ -283,12 +283,6 @@
   $('#bar1').barfiller();
   $('#bar2').barfiller();
 
-  
-// Modal Activation
-  $('.search-switch').on('click', function () {
-    console.log("search-switch");
-    $('.search-model-box').fadeIn(400);
-  });
 
   // console.log("set search btn event");
   // console.log($('.search-close-btn'));

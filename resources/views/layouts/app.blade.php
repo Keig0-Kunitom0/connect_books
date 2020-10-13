@@ -24,9 +24,10 @@
     <link rel="stylesheet" href="/assets/css/slick.css">
     <link rel="stylesheet" href="/assets/css/nice-select.css">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/dropdown.css">
     @yield('pageCss')
 </head>
-<body class="full-wrapper">
+<body>
      @include('commons.navbar')
 <main>
     <div class="new-arrival">
@@ -81,7 +82,7 @@
 <script src="/assets/js/main.js"></script>
 
 <script src="{{ mix('js/app.js') }}"></script>
-
+<script src="{{ mix('js/search.js') }}"></script>
 @yield('script')
 </body>
 </html>

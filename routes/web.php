@@ -25,11 +25,10 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('users', 'UsersController', ['only' => ['show', 'edit','update']]);
 });
+
+Route::get('books','BooksController@books')->name('books.get');
+Route::get('books/{id}', 'BooksController@show');
  
  // Route::get('/barcode', function () {
  //      return view('barcodesample');
  // }); 
-
-  Route::get('/home/test', function () {
-       return view('books.books');
-  });

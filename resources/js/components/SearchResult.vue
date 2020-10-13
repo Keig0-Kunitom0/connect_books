@@ -7,29 +7,17 @@
       　v-bind:key="book.id"
         class="col-xl-3 col-lg-3 col-md-6 col-sm-6"
       >
-                <div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
+                <div class="single-new-arrival mb-50 text-center wow fadeInUp" id="image_item" data-wow-duration="1s" data-wow-delay=".1s">
                     <div class="popular-img">
                         <img
-                        　v-bind:src="book.Item.largeImageUrl"
+                        　v-bind:src="book.img_url"
                           alt="書籍画像"
                         >
-                        <div class="favorit-items">
-                            <!-- <span class="flaticon-heart"></span> -->
-                            <img src="/assets/img/gallery/favorit-card.png" alt="">
-                        </div>
                     </div>
                     <div class="popular-caption">
                         <h3>
-                          <a v-bind:href="book.Item.affiliateUrl" target="_blank">{{ book.Item.title }}</a>
+                          <a v-bind:href="'/books/'+ book.id">{{ book.title }}</a>
                         </h3>
-                        <div class="rating mb-10">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span>¥{{ book.Item.itemPrice }}</span>
                     </div>
                 </div>
             </div>
@@ -60,7 +48,7 @@ export default {
       fetch(`/api/search?q=${this.searchText}`)
         .then(response => response.json())
         .then(data => {
-          this.books = data.Items;
+          this.books = data;
           console.log(this.books)
           console.log(`/api/search?q=${this.searchText}`);
         })
@@ -70,5 +58,18 @@ export default {
 </script>
 
 <style scoped>
+#image_item {
+  
+  /*枠をつける*/
+  border: 8px solid #EEEEEE;
+  
+  /*影をつける*/
+  box-shadow: 4px 4px 6px 1px #ccc;
+  
+  margin-left: 9px;
+  margin-right: 9px;
+  margin-bottom: 18px;
+}
+
 
 </style>

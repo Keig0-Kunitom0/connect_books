@@ -18,12 +18,7 @@
                     {!! Form::label('name_kana', '名前カナ') !!}
                     {!! Form::text('name_kana', old('name_kana'), ['class' => 'form-control']) !!}
                 </div>
-                
-                <div class="form-group">
-                    {!! Form::label('nickname', 'ニックネーム') !!}
-                    {!! Form::text('nickname', old('nickname'), ['class' => 'form-control']) !!}
-                </div>
-                
+    
                 <div class="form-group">
                     {!! Form::label('birthday', '生年月日') !!}
                     {!! Form::text('birthday', old('birthday'), ['class' => 'form-control']) !!}

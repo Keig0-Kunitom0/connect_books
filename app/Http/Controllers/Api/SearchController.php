@@ -22,19 +22,51 @@ class SearchController extends Controller
             'affiliateId'=> '1cbb6bcb.b85d0223.1cbb6bcc.19ae9cea',
             'hits' => 15,
             'title' => $request->q,
-            'isbn' => $request->q,
+            //'isbn' => $request->q,
         ];
     
         $query = http_build_query($params, "", "&");
         $search_url = $url . '?' . $query;
         
         $result = file_get_contents($search_url);
-        //dd($result);
         
-        if($result){
-            return json_decode($result, true);
-        }else{
+        if($result === false){
             return [];
         }
+        
+        
+        $records = json_decode($result, false);
+        
+        $books = [];
+        foreach ($records->Items as $item) {
+            //  同じisbnのデータがあれば重複データを作成しない。findOrCreateを使う。
+            $book = Book::firstOrCreate([
+            'title' => $item->Item->title,
+            'author' => $item->Item->author,
+            'isbn' => $item->Item->isbn,
+            'publisher' => $item->Item->publisherName,
+            'img_url' => $item->Item->largeImageUrl,
+            'affiliate' => $item->Item->affiliateUrl,
+            'release_date' => $item->Item->salesDate,
+            ]);
+            
+            $book->title = $item->Item->title;
+            $book->author = $item->Item->author;
+            $book->isbn = $item->Item->isbn;
+            $book->publisher = $item->Item->publisherName;
+            $book->img_url = $item->Item->largeImageUrl;
+            $book->affiliate = $item->Item->affiliateUrl;
+            //$book->category = $item->Item->category;
+            //$book->category = "dummy"; // FIXME：categoryがnullableでないのでエラーになったのでダミーデータ投入。
+            $book->release_date= $item->Item->salesDate; 
+            $book->save();
+            
+            $books[] = $book->toArray();
+        }
+        
+        //dd($books);
+        
+        return $books;
+
     }
 }

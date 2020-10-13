@@ -37,7 +37,6 @@ class UsersController extends Controller
         
         //ユーザー情報を更新
         return User::create([
-            'nickname' => $data['nickname'],
             'name' => $data['name'],
             'name_kana' => $data['name_kana'],
             'birthday' => $data['birthday'],

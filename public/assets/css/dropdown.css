@@ -1,0 +1,28 @@
+li.dropdown-item a {
+    color: #635c5c;
+}
+
+.gallery-img img {
+    width: 250;
+}
+
+.small-tittle h1 {
+    font-family: "Poppins",sans-serif;
+}
+
+.small-content h2 {
+    font-family: "Poppins",sans-serif;
+}
+
+.ti-search {
+    background: #F6F8FE;
+    border-radius: 50%;
+    padding: 13px 13px;
+    font-size: 20px;
+}
+
+.header-right {
+    z-index: 2;
+    position: absolute;
+    right: 13px;
+}

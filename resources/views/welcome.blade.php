@@ -2,7 +2,14 @@
 
 @section('content')
     @if (Auth::check())
-        @include('books.books')
+        <div id="app">
+            <div class="header-right">
+                <i class="ti-search" @click="openModal"></i>
+            </div>
+  　　　     　<search-modelbox @hogehoge="search"></search-modelbox>
+           <!--結果一覧の表示のコンポーネント -->
+            <search-result :search-text="searchText"></search-result>
+         </div>
     @else
         <div class="center jumbotron">
             <div class="text-center">
