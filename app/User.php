@@ -17,15 +17,8 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'name_kana',
         'email', 
         'password',
-        'birthday',
-        'post_code',
-        'prefecture',
-        'city',
-        'housse_number',
-        'building_name',
     ];
 
     /**
@@ -45,4 +38,53 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    public function favorite_books()
+    {
+        return $this->belongsToMany(Book::class, 'book_favorite', 'user_id', 'book_id')->withTimestamps();
+    }
+    
+    public function loadRelationshipCounts()
+    {
+        $this->loadCount(['favorite_books']);
+    }
+    
+    public function favorite($bookId)
+    {
+        // すでにお気に入りしているかの確認
+        $exist = $this->is_favorite($bookId);
+
+        if ($exist) {
+            // すでにお気に入りしていれば何もしない
+            return false;
+        } else {
+            // お気に入りしていないであればお気に入りする
+            $this->favorite_books()->attach($bookId);
+            return true;
+        }
+    }
+    
+    public function unfavorite($bookId)
+    {
+        // すでにお気に入りしているかの確認
+        $exist = $this->is_favorite($bookId);
+
+        if ($exist) {
+            // すでにお気に入りしていればお気に入りを外す
+            $this->favorite_books()->detach($bookId);
+            return true;
+        } else {
+            // 未お気に入りであれば何もしない
+            return false;
+        }
+    }
+
+
+    public function is_favorite($bookId)
+    {
+        // お気に入り本の中に $bookIdのものが存在するか
+        return $this->favorite_books()->where('book_id', $bookId)->exists();
+    }
+    
+    
 }

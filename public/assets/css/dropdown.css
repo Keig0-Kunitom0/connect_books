@@ -3,15 +3,38 @@ li.dropdown-item a {
 }
 
 .gallery-img img {
-    width: 250;
+    width: 105%;
 }
 
-.small-tittle h1 {
+.heading{
+    font-weight: bold;
     font-family: "Poppins",sans-serif;
+    padding-left: 70px;
+    margin-bottom:25px;
+    margin-top:-10px;
+    font-size: 35px
+}
+
+
+.small-content h1 {
+    font-weight: bold;
+    font-family: "Poppins",sans-serif;
+    font-size: 32px
 }
 
 .small-content h2 {
     font-family: "Poppins",sans-serif;
+    font-size: 23px
+}
+
+.content_url h2  {
+    font-weight: bold;
+    font-family: "Poppins",sans-serif;
+    font-size: 22px
+}
+
+.content_url h2 a:hover {
+    background-color: #9F78FF;
 }
 
 .ti-search {
@@ -25,4 +48,17 @@ li.dropdown-item a {
     z-index: 2;
     position: absolute;
     right: 13px;
+}
+
+a.title_content:hover {
+    background-color: #9F78FF;
+}
+
+a.title_content {
+    font-family: "Poppins",sans-serif;
+    font-weight: bold;
+}
+
+.favorite_contents img {
+    width:75%;
 }

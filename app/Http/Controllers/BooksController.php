@@ -13,10 +13,10 @@ class BooksController extends Controller
     
     public function show ($id) {
         
-        $books = Book::findOrFail($id);
+        $book = Book::findOrFail($id);
         
         return view('books.show',[
-            'books' => $books,
+            'book' => $book,
         ]);
     }
 }

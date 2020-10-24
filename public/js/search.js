@@ -1978,31 +1978,53 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['searchText'],
   data: function data() {
     return {
-      books: []
+      books: [],
+      page: 1
     };
   },
   watch: {
     searchText: function searchText(newSearchText, oldSearchText) {
       console.log(newSearchText);
+      this.reset();
       this.getBooks();
     }
   },
+  mounted: function mounted() {
+    var _this = this;
+
+    var load = document.querySelectorAll('.load');
+    load.forEach(function (target) {
+      return _this.onIntersect(target);
+    });
+  },
   methods: {
     getBooks: function getBooks() {
-      var _this = this;
+      var _this2 = this;
 
-      fetch("/api/search?q=".concat(this.searchText)).then(function (response) {
+      fetch("/api/search?q=".concat(this.searchText, "&page=").concat(this.page)).then(function (response) {
         return response.json();
       }).then(function (data) {
-        _this.books = data;
-        console.log(_this.books);
-        console.log("/api/search?q=".concat(_this.searchText));
+        _this2.books = _this2.books.concat(data);
+        console.log(_this2.books);
+        console.log("/api/search?q=".concat(_this2.searchText));
       });
+    },
+    onIntersect: function onIntersect(target) {
+      var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      var observer = new IntersectionObserver(this.load, options); // 監視したい要素をobserveする。
+
+      observer.observe(target);
+    },
+    load: function load() {
+      this.page = this.page + 1;
+      this.getBooks();
+    },
+    reset: function reset() {
+      Object.assign(this.$data, this.$options.data.call(this));
     }
   }
 });
@@ -20437,43 +20459,49 @@ var render = function() {
       _c(
         "div",
         { staticClass: "row" },
-        _vm._l(_vm.books, function(book) {
-          return _c(
-            "div",
-            {
-              key: book.id,
-              staticClass: "col-xl-3 col-lg-3 col-md-6 col-sm-6"
-            },
-            [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "single-new-arrival mb-50 text-center wow fadeInUp",
-                  attrs: {
-                    id: "image_item",
-                    "data-wow-duration": "1s",
-                    "data-wow-delay": ".1s"
-                  }
-                },
-                [
-                  _c("div", { staticClass: "popular-img" }, [
-                    _c("img", { attrs: { src: book.img_url, alt: "書籍画像" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "popular-caption" }, [
-                    _c("h3", [
-                      _c("a", { attrs: { href: "/books/" + book.id } }, [
-                        _vm._v(_vm._s(book.title))
+        [
+          _vm._l(_vm.books, function(book) {
+            return _c(
+              "div",
+              {
+                key: book.id,
+                staticClass: "col-xl-3 col-lg-3 col-md-6 col-sm-6"
+              },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "single-new-arrival mb-50 text-center wow fadeInUp",
+                    attrs: {
+                      id: "image_item",
+                      "data-wow-duration": "1s",
+                      "data-wow-delay": ".1s"
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "popular-img" }, [
+                      _c("img", {
+                        attrs: { src: book.img_url, alt: "書籍画像" }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "popular-caption" }, [
+                      _c("h3", [
+                        _c("a", { attrs: { href: "/books/" + book.id } }, [
+                          _vm._v(_vm._s(book.title))
+                        ])
                       ])
                     ])
-                  ])
-                ]
-              )
-            ]
-          )
-        }),
-        0
+                  ]
+                )
+              ]
+            )
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "load" })
+        ],
+        2
       )
     ])
   ])

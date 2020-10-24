@@ -83,6 +83,8 @@
 
 <script src="{{ mix('js/app.js') }}"></script>
 <script src="{{ mix('js/search.js') }}"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
 @yield('script')
 </body>
 </html>

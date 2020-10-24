@@ -22,6 +22,7 @@ class SearchController extends Controller
             'affiliateId'=> '1cbb6bcb.b85d0223.1cbb6bcc.19ae9cea',
             'hits' => 15,
             'title' => $request->q,
+            'page' => $request->page,
             //'isbn' => $request->q,
         ];
     
