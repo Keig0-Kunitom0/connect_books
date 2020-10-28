@@ -6,13 +6,18 @@ li.dropdown-item a {
     width: 105%;
 }
 
-.heading{
+h1.heading{
     font-weight: bold;
     font-family: "Poppins",sans-serif;
     padding-left: 70px;
     margin-bottom:25px;
     margin-top:-10px;
     font-size: 35px
+}
+
+.heading{
+    font-weight: bold;
+    font-family: "Poppins",sans-serif;
 }
 
 
@@ -61,4 +66,16 @@ a.title_content {
 
 .favorite_contents img {
     width:75%;
+}
+
+.name_color a{
+    color: #635c5c;
+}
+
+h1.title_text{
+    font-weight: bold;
+    font-family: "Poppins",sans-serif;
+    margin-bottom:35px;
+    margin-top:-15px;
+    font-size: 35px
 }

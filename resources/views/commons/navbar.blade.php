@@ -12,8 +12,9 @@
             <ul class="navbar-nav">
                 @if (Auth::check())
                     <li class="nav-item">{!! link_to_route('books.get', '書籍検索', [],['class' => 'nav-link']) !!}</li>
-                    <li class="nav-item">{!! link_to_route('users.favorite_books', 'お気に入り', ['id' => Auth::id()],['class' => 'nav-link']) !!}</li>
+                    <li class="nav-item">{!! link_to_route('users.show', 'アカウント',['id' => Auth::id()],['class' => 'nav-link']) !!}</li>
                     <li class="nav-item">{!! link_to_route('logout.get', 'ログアウト',[],['class' => 'nav-link']) !!}</li>
+                    
                 @else
                     {{-- ユーザ登録ページへのリンク --}}
                     <li class="nav-item">{!! link_to_route('signup.get', '新規登録', [], ['class' => 'nav-link']) !!}</li>

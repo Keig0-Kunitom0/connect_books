@@ -44,9 +44,14 @@ class User extends Authenticatable
         return $this->belongsToMany(Book::class, 'book_favorite', 'user_id', 'book_id')->withTimestamps();
     }
     
+    public function comments() 
+    {
+        return $this->hasMany(\App\Comment::class);
+    }
+    
     public function loadRelationshipCounts()
     {
-        $this->loadCount(['favorite_books']);
+        $this->loadCount(['favorite_books','comments']);
     }
     
     public function favorite($bookId)
@@ -79,12 +84,10 @@ class User extends Authenticatable
         }
     }
 
-
     public function is_favorite($bookId)
     {
         // お気に入り本の中に $bookIdのものが存在するか
         return $this->favorite_books()->where('book_id', $bookId)->exists();
     }
-    
     
 }

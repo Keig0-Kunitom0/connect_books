@@ -1,11 +1,6 @@
-@extends('layouts.app')
-
-@section('content')
-
 @if (count($favorites) > 0)
 <div class="directory-details pt-padding">
     <div class="favorite_contents">
-        <h1 class="heading">お気に入り一覧</h1>
             <div class="container">
                 <div class="row">
                     @foreach ($favorites as $favorite)
@@ -25,10 +20,11 @@
                         @include('books_favorite.favorite_button', ['book' => $favorite])
                     </div>
                     @endforeach
+                    
+                    {{-- ページネーションのリンク --}}
+                    {{ $favorites->links() }}
                 </div>
             </div>
     </div>
 </div>
 @endif
-
-@endsection

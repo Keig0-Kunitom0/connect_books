@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Book;
+use App\Comment;
 
 class BooksController extends Controller
 {
@@ -15,8 +16,14 @@ class BooksController extends Controller
         
         $book = Book::findOrFail($id);
         
+        $book->loadRelationshipCounts();
+        
+        $comments = $book->comments()->orderBy('created_at', 'desc')->paginate(25);
+        
         return view('books.show',[
             'book' => $book,
+            'comments' => $comments,
         ]);
     }
+    
 }

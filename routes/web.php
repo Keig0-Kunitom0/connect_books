@@ -27,13 +27,19 @@ Route::group(['middleware' => ['auth']], function () {
        Route::get('favorite_books', 'UsersController@favorite_books')->name('users.favorite_books');
    });
    
+   Route::get('users/{id}','UsersController@show')->name('users.show');
+   
    Route::group(['prefix' => 'books/{id}'],function () {
        Route::post('favorite', 'FavoritesController@store')->name('favorites.favorite');
        Route::delete('unfavorite', 'FavoritesController@destroy')->name('favorites.unfavorite');
    });
    
+   Route::resource('comments','CommentsController',['only' => ['store','destroy']]);
+   
    Route::get('books','BooksController@books')->name('books.get');
    Route::get('books/{id}', 'BooksController@show')->name('books.show');
+   
+   
 });
  
  // Route::get('/barcode', function () {

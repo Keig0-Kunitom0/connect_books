@@ -36,9 +36,13 @@
                         @include('books_favorite.favorite_button')
                     </div>
                 </div>
+                <h2>&nbsp;</h2>
+                <h2 class="heading">レビュー一覧</h2>
+                    {{-- 投稿フォーム --}}
+                    @include('comments.form')
+                    {{-- 投稿一覧 --}}
+                    @include('comments.comments')
             </div>
-            
-            
     </div>
 
 @endsection

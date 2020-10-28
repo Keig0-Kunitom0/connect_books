@@ -1922,7 +1922,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      keyword: "javascript"
+      keyword: ""
     };
   },
   methods: {
@@ -1949,6 +1949,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -20454,56 +20460,68 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "container" }, [
-      _c(
-        "div",
-        { staticClass: "row" },
-        [
-          _vm._l(_vm.books, function(book) {
-            return _c(
-              "div",
-              {
-                key: book.id,
-                staticClass: "col-xl-3 col-lg-3 col-md-6 col-sm-6"
-              },
-              [
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "single-new-arrival mb-50 text-center wow fadeInUp",
-                    attrs: {
-                      id: "image_item",
-                      "data-wow-duration": "1s",
-                      "data-wow-delay": ".1s"
-                    }
-                  },
-                  [
-                    _c("div", { staticClass: "popular-img" }, [
-                      _c("img", {
-                        attrs: { src: book.img_url, alt: "書籍画像" }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "popular-caption" }, [
-                      _c("h3", [
-                        _c("a", { attrs: { href: "/books/" + book.id } }, [
-                          _vm._v(_vm._s(book.title))
-                        ])
-                      ])
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row" }, [
+      _vm.searchText
+        ? _c("section", [
+            _c("h1", { staticClass: "title_text" }, [
+              _vm._v("検索結果｢" + _vm._s(_vm.searchText) + "｣")
+            ])
+          ])
+        : _c("section", [
+            _c("h1", { staticClass: "title_text" }, [_vm._v("おすすめの本")])
+          ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row" },
+      [
+        _vm._l(_vm.books, function(book) {
+          return _c(
+            "div",
+            {
+              key: book.id,
+              staticClass: "col-xl-3 col-lg-3 col-md-6 col-sm-6"
+            },
+            [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "single-new-arrival mb-50 text-center wow fadeInUp",
+                  attrs: {
+                    id: "image_item",
+                    "data-wow-duration": "1s",
+                    "data-wow-delay": ".1s"
+                  }
+                },
+                [
+                  _c("div", { staticClass: "popular-img" }, [
+                    _c("img", { attrs: { src: book.img_url, alt: "書籍画像" } })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "popular-caption" }, [
+                    _c("h3", [
+                      _c(
+                        "a",
+                        {
+                          attrs: { target: "_blank", href: "/books/" + book.id }
+                        },
+                        [_vm._v(_vm._s(book.title))]
+                      )
                     ])
-                  ]
-                )
-              ]
-            )
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "load" })
-        ],
-        2
-      )
-    ])
+                  ])
+                ]
+              )
+            ]
+          )
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "load" })
+      ],
+      2
+    )
   ])
 }
 var staticRenderFns = []

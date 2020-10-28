@@ -9,8 +9,23 @@ use App\Book;
 
 class UsersController extends Controller
 {
+    public function show($id)
+    {
+        $user = User::findOrFail($id);
+        
+        $user->loadRelationshipCounts();
+        
+        $favorites = $user->favorite_books()->orderBy('created_at','desc')->paginate(25);
+        
+        return view('users.show',
+        [
+            'user' => $user,
+            'favorites' => $favorites,
+        ]);
+    }
+    
     public function favorite_books($id)
-        {
+    {
         // idの値でユーザを検索して取得
         $user = User::findOrFail($id);
         
@@ -18,7 +33,7 @@ class UsersController extends Controller
         $user->loadRelationshipCounts();
 
         // ユーザの投稿一覧を作成日時の降順で取得
-        $favorites = $user->favorite_books()->orderBy('created_at', 'desc')->paginate(10);
+        $favorites = $user->favorite_books()->orderBy('created_at', 'desc')->paginate(25);
 
         // お気に入り一覧ビューでそれを表示
         return view('users.favorite_books', 
@@ -26,5 +41,5 @@ class UsersController extends Controller
             'user' => $user,
             'favorites' => $favorites,
         ]);
-     }
+    }
 }

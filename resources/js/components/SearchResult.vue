@@ -1,6 +1,13 @@
 <template>
-  <div>
     <div class="container">
+      <div class="row">
+        <section v-if="searchText">
+          <h1 class="title_text">検索結果｢{{searchText}}｣</h1>
+        </section>
+        <section v-else >
+          <h1 class="title_text">おすすめの本</h1>
+        </section>
+      </div>
       <div class="row">
         <div 
           v-for="book in books"
@@ -16,7 +23,7 @@
             </div>
               <div class="popular-caption">
                 <h3>
-                  <a v-bind:href="'/books/'+ book.id">{{ book.title }}</a>
+                  <a target="_blank" v-bind:href="'/books/'+ book.id">{{ book.title }}</a>
                 </h3>
               </div>
           </div>
@@ -24,7 +31,6 @@
         <div class="load"></div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>

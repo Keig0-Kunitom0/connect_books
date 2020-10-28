@@ -13,7 +13,7 @@
 export default {
   data() {
     return {
-      keyword: "javascript",
+      keyword: "",
     }
   },
   methods: {

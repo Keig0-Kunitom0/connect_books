@@ -17,7 +17,12 @@ class Book extends Model
     
     public function comments() 
     {
-        return $this->hasMany(BookComment::class, 'book_id', 'id');
+        return $this->hasMany(\App\Comment::class);
+    }
+    
+    public function loadRelationshipCounts()
+    {
+        $this->loadCount(['comments']);
     }
     
 }
