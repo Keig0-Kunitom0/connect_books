@@ -40,6 +40,13 @@ Route::group(['middleware' => ['auth']], function () {
    Route::get('books/{id}', 'BooksController@show')->name('books.show');
    
    
+   Route::group(['prefix' => 'evaluations/{id}'], function () {
+       Route::post('add_good','EvaluationsController@add_good')->name('evaluations.add_good');
+       Route::delete('remove_good','EvaluationsController@remove_good')->name('evaluations.remove_good');
+       Route::post('add_bad','EvaluationsController@add_bad')->name('evaluations.add_bad');
+       Route::delete('remove_bad','EvaluationsController@remove_bad')->name('evaluations.remove_bad');
+   });
+   
 });
  
  // Route::get('/barcode', function () {

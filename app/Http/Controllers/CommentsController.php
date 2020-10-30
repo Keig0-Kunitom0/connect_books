@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Comment;
 
 class CommentsController extends Controller
 {
@@ -25,11 +26,10 @@ class CommentsController extends Controller
     
     public function destroy($id) {
         
-        $comment = \App\Comment::find0rFail($id);
+        $comment = Comment::findOrFail($id);
         
+        $comment->delete();
         
-        if (\Auth::id() === $$comment->user_id) {
-            $$comment->delete();
-        }
+        return back();
     }
 }

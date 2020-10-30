@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEvaluationTable extends Migration
+class CreateEvaluationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateEvaluationTable extends Migration
      */
     public function up()
     {
-        Schema::create('evaluation', function (Blueprint $table) {
+        Schema::create('evaluations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('book_id');
@@ -23,7 +23,7 @@ class CreateEvaluationTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('book_id')->references('id')->on('books');
             
-            $table->unique(['user_id','book_id']);
+            $table->unique(['user_id','book_id','good_or_bad']);
         });
     }
 
@@ -34,6 +34,6 @@ class CreateEvaluationTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('evaluation');
+        Schema::dropIfExists('evaluations');
     }
 }

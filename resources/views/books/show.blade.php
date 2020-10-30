@@ -29,11 +29,19 @@
                         </div>
                         <h2>&nbsp;</h2>
                         <h2>&nbsp;</h2>
+                        <div class="row">
+                            <div class="col-md-4">@include('books_favorite.good_button')</div>
+                                <span class="badge badge-secondary">{{ $book->goodCounts() }}</span>
+                            <div class="col-md-4">@include('books_favorite.bad_button')</div>
+                                <span class="badge badge-secondary">{{ $book->badCounts() }}</span>
+                        </div>
+                        <h2>&nbsp;</h2>
                         <u class="content_url">
                             <h2><a href="{{ $book->affiliate }}"><i class="fas fa-arrow-right"></i>楽天ブックスで購入する</a></h2>
                         </u>
                         {{-- お気に入り／お気に入り解除ボタン --}}
                         @include('books_favorite.favorite_button')
+                        
                     </div>
                 </div>
                 <h2>&nbsp;</h2>

@@ -18,7 +18,12 @@ class BooksController extends Controller
         
         $book->loadRelationshipCounts();
         
+        $book->goodCounts();
+        
+        $book->badCounts();
+        
         $comments = $book->comments()->orderBy('created_at', 'desc')->paginate(25);
+        
         
         return view('books.show',[
             'book' => $book,
