@@ -30,11 +30,11 @@
                         <h2>&nbsp;</h2>
                         <h2>&nbsp;</h2>
                         <div class="row">
-                            <div class="col-md-5">
+                            <div class="col-5">
                                 @include('books_favorite.good_button')
                                 <h3>高評価<span class="badge badge-secondary">{{ $book->goodCounts() }}</span></h3>
                             </div>
-                            <div class="offset-md-2 col-md-5">
+                            <div class="offset-2 col-5">
                                 @include('books_favorite.bad_button')
                                 <h3>低評価<span class="badge badge-secondary">{{ $book->badCounts() }}</span></h3>
                             </div>
@@ -44,7 +44,7 @@
                             <h2><a href="{{ $book->affiliate }}"><i class="fas fa-arrow-right"></i>楽天ブックスで購入する</a></h2>
                         </u>
                         {{-- お気に入り／お気に入り解除ボタン --}}
-                        @include('books_favorite.favorite_button')
+                        @include('books_favorite.favorite_button', ['favorite' => $book])
                         
                     </div>
                 </div>

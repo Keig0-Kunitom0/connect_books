@@ -27,7 +27,7 @@ Route::group(['middleware' => ['auth']], function () {
        Route::get('favorite_books', 'UsersController@favorite_books')->name('users.favorite_books');
    });
    
-   Route::get('users/{id}','UsersController@show')->name('users.show');
+   Route::resource('users','UsersController',['only' => ['show','edit','update']]);
    
    Route::group(['prefix' => 'books/{id}'],function () {
        Route::post('favorite', 'FavoritesController@store')->name('favorites.favorite');

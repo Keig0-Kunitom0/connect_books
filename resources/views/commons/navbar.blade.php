@@ -12,7 +12,8 @@
             <ul class="navbar-nav">
                 @if (Auth::check())
                     <li class="nav-item">{!! link_to_route('books.get', '書籍検索', [],['class' => 'nav-link']) !!}</li>
-                    <li class="nav-item">{!! link_to_route('users.show', 'アカウント',['id' => Auth::id()],['class' => 'nav-link']) !!}</li>
+                    <li class="nav-item">{!! link_to_route('users.show', 'アカウント',['user' => Auth::id()],['class' => 'nav-link']) !!}</li>
+                    <!--<li class="nav-item">{!! link_to_route('users.edit', '設定',['user' => Auth::id()],['class' => 'nav-link']) !!}</li>-->
                     <li class="nav-item">{!! link_to_route('logout.get', 'ログアウト',[],['class' => 'nav-link']) !!}</li>
                     
                 @else

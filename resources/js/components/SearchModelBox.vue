@@ -3,7 +3,7 @@
       <div class="h-100 d-flex align-i tems-center justify-content-center">
         <div class="search-close-btn" @click="closeModal">+</div>
         <form class="search-model-form" @submit.prevent="fugafuga">
-          <input type="text"  v-model="keyword"  id="search-input" placeholder="Searching key.....">
+          <input type="text"  v-model="keyword"  id="search-input" placeholder="キーワードを入力">
         </form>
       </div>
     </div>

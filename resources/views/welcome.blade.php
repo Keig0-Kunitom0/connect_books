@@ -4,7 +4,7 @@
     @if (Auth::check())
         <div id="app">
             <div class="header-right">
-                <i class="ti-search" @click="openModal"></i>
+                <h2>検索⇨︎<i class="ti-search" @click="openModal"></i></h2>
             </div>
   　　　     　<search-modelbox @hogehoge="search"></search-modelbox>
            <!--結果一覧の表示のコンポーネント -->

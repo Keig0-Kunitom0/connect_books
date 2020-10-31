@@ -20419,7 +20419,7 @@ var render = function() {
                 attrs: {
                   type: "text",
                   id: "search-input",
-                  placeholder: "Searching key....."
+                  placeholder: "キーワードを入力"
                 },
                 domProps: { value: _vm.keyword },
                 on: {
@@ -20469,7 +20469,9 @@ var render = function() {
             ])
           ])
         : _c("section", [
-            _c("h1", { staticClass: "title_text" }, [_vm._v("おすすめの本")])
+            _c("h1", { staticClass: "title_text" }, [
+              _vm._v("こんな本はいかがですか？")
+            ])
           ])
     ]),
     _vm._v(" "),

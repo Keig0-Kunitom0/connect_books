@@ -24,6 +24,27 @@ class UsersController extends Controller
         ]);
     }
     
+    // public function edit($id)
+    // {
+    //     $user = User::findOrFail($id);
+        
+    //     return view('users.edit',[
+    //         'user' => $user,
+    //     ]);
+    // }
+    
+    // public function update(Request $request,$id)
+    // {
+    //     $user = User::findOrFail($id);
+        
+    //     $user->name = $request->name;
+    //     $user->email = $request->email;
+    //     // $user->password = $request->password;
+    //     $user->save();
+        
+    //     return redirect('/');
+    // }
+    
     public function favorite_books($id)
     {
         // idの値でユーザを検索して取得

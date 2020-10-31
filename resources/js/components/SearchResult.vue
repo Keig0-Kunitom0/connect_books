@@ -5,7 +5,7 @@
           <h1 class="title_text">検索結果｢{{searchText}}｣</h1>
         </section>
         <section v-else >
-          <h1 class="title_text">おすすめの本</h1>
+          <h1 class="title_text">こんな本はいかがですか？</h1>
         </section>
       </div>
       <div class="row">

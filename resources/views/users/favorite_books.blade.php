@@ -17,7 +17,7 @@
                     <div class="col-md-6 favorite_title">
                         <h2><a href="/books/{{ $favorite->id }}" class="title_content">{{ $favorite->title }}</a></h2>
                         {{-- お気に入り／お気に入り解除ボタン --}}
-                        @include('books_favorite.favorite_button', ['book' => $favorite])
+                        @include('books_favorite.favorite_button')
                     </div>
                     @endforeach
                     
