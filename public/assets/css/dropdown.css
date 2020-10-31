@@ -79,3 +79,17 @@ h1.title_text{
     margin-top:-15px;
     font-size: 35px
 }
+
+.good_btn{
+    padding-top: 12px;
+    padding-right: 22px;
+    padding-bottom: 12px;
+    padding-left: 14px;
+}
+
+.bad_btn{
+    padding-top: 12px;
+    padding-right: 22px;
+    padding-bottom: 12px;
+    padding-left: 14px;
+}

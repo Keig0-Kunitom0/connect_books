@@ -30,10 +30,14 @@
                         <h2>&nbsp;</h2>
                         <h2>&nbsp;</h2>
                         <div class="row">
-                            <div class="col-md-4">@include('books_favorite.good_button')</div>
-                                <span class="badge badge-secondary">{{ $book->goodCounts() }}</span>
-                            <div class="col-md-4">@include('books_favorite.bad_button')</div>
-                                <span class="badge badge-secondary">{{ $book->badCounts() }}</span>
+                            <div class="col-md-5">
+                                @include('books_favorite.good_button')
+                                <h3>高評価<span class="badge badge-secondary">{{ $book->goodCounts() }}</span></h3>
+                            </div>
+                            <div class="offset-md-2 col-md-5">
+                                @include('books_favorite.bad_button')
+                                <h3>低評価<span class="badge badge-secondary">{{ $book->badCounts() }}</span></h3>
+                            </div>
                         </div>
                         <h2>&nbsp;</h2>
                         <u class="content_url">
