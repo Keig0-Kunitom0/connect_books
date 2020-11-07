@@ -1,1 +1,1 @@
-# connect_books
+# connect-books
