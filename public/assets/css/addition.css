@@ -1,0 +1,178 @@
+li.dropdown-item a {
+    color: #635c5c;
+}
+
+.gallery-img img {
+    width: 350px;
+    height: 460px;
+}
+
+.gallery-img_1 img{
+    margin-bottom: 25px;
+}
+
+h1.heading{
+    font-weight: bold;
+    font-family: "Poppins",sans-serif;
+    padding-left: 70px;
+    margin-bottom:25px;
+    margin-top:-10px;
+    font-size: 35px
+}
+
+.heading{
+    font-weight: bold;
+    font-family: "Poppins",sans-serif;
+}
+
+
+.small-content h1 {
+    font-weight: bold;
+    font-family: "Poppins",sans-serif;
+    font-size: 32px
+}
+
+.small-content h2 {
+    font-family: "Poppins",sans-serif;
+    font-size: 23px
+}
+
+.content_url h2  {
+    font-weight: bold;
+    font-family: "Poppins",sans-serif;
+    font-size: 22px
+}
+
+.content_url h2 a:hover {
+    background-color: #9F78FF;
+}
+
+.ti-search {
+    background: #F6F8FE;
+    border-radius: 50%;
+    padding: 13px 13px;
+    font-size: 20px;
+}
+
+.header-right {
+    z-index: 2;
+    position: absolute;
+    right: 13px;
+}
+
+a.title_content:hover {
+    background-color: #9F78FF;
+}
+
+a.title_content {
+    font-family: "Poppins",sans-serif;
+    font-weight: bold;
+}
+
+.favorite_contents img {
+    width:75%;
+}
+
+.name_color a{
+    color: #635c5c;
+}
+
+h1.title_text{
+    font-weight: bold;
+    font-family: "Poppins",sans-serif;
+    margin-bottom:35px;
+    margin-top:-15px;
+    font-size: 35px
+}
+
+.good_btn{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border: 1px solid #9F78FF;
+    color: #9F78FF;
+    background: none;
+    margin-bottom: 15px;
+    margin-top: -7px;
+}
+
+.good_btn:hover{
+    color: #fff;
+}
+
+.bad_btn{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border: 1px solid #9F78FF;
+    color: #9F78FF;
+    background: none;
+    margin-left: -50px;
+    margin-top: -7px;
+}
+
+.bad_btn:hover{
+    color: #fff;
+}
+
+.favorite_btn{
+    padding-top: 27px;
+    padding-bottom: 27px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+.unfavorite_btn{
+    padding-top: 27px;
+    padding-bottom: 27px;
+    padding-left: 61px;
+    padding-right: 61px;
+}
+
+.submit_btn{
+    padding-top: 27px;
+    padding-bottom: 27px;
+    padding-left: 89px;
+    padding-right: 89px;
+    margin-top:3px;
+    margin-bottom: -28px;
+}
+
+#image_item{
+    width: 350px;
+    height: 640px;
+    
+}
+
+div .popular-img img{
+    width: 170px;
+    height: 400px;
+    
+}
+
+.popular-caption{
+    width: 334px;
+    height: 225px;
+    padding-top: 10px;
+}
+
+.book{
+    padding-bottom: 40px;
+}
+
+.submit_btn_item{
+    margin-top: 10px;
+}
+
+.delete_btn{
+    padding-left:18px;
+    padding-right:18px;
+    padding-bottom: 14px;
+    padding-top: 14px;
+}
+
+hr .border{
+    color: #9F78FF;
+}

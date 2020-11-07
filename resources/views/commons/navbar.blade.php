@@ -3,7 +3,7 @@
         {{-- トップページへのリンク --}}
         <a class="navbar-brand" href="/">Connect_Books</a>
 
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#nav-bar">
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="nav-bar">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -13,9 +13,7 @@
                 @if (Auth::check())
                     <li class="nav-item">{!! link_to_route('books.get', '書籍検索', [],['class' => 'nav-link']) !!}</li>
                     <li class="nav-item">{!! link_to_route('users.show', 'マイアカウント',['user' => Auth::id()],['class' => 'nav-link']) !!}</li>
-                    <!--<li class="nav-item">{!! link_to_route('users.edit', '設定',['user' => Auth::id()],['class' => 'nav-link']) !!}</li>-->
                     <li class="nav-item">{!! link_to_route('logout.get', 'ログアウト',[],['class' => 'nav-link']) !!}</li>
-                    
                 @else
                     {{-- ユーザ登録ページへのリンク --}}
                     <li class="nav-item">{!! link_to_route('signup.get', '新規登録', [], ['class' => 'nav-link']) !!}</li>

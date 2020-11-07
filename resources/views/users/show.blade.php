@@ -8,11 +8,11 @@
                 <aside class="col-sm-4">
                     <div class="card">
                         <div class="card-header">
-                            <h2 class="card-title">{{ $user->name }}</h3>
+                            <h2 class="card-title heading">{{ $user->name }}</h3>
                         </div>
                         <div class="card-body">
                             {{-- ユーザのメールアドレスをもとにGravatarを取得して表示 --}}
-                            <img class="rounded img-fluid" src="{{ Gravatar::get($user->email, ['size' => 500]) }}" alt="">
+                            <img class="rounded img-fluid" src="{{ Gravatar::get($user->email, ['size' => 500]) }}" alt="ユーザー画像">
                         </div>
                     </div>
                 </aside>

@@ -161,7 +161,7 @@ class User extends Authenticatable
         $exist = $this->is_bad($id);
 
         if ($exist) {
-            // すでに低評価していればお気に入りを外す
+            // すでに低評価していれば低評価を外す
            $this->evaluations()->where('good_or_bad','-1')->delete();
         } else {
             // 未低評価であれば何もしない

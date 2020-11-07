@@ -2,9 +2,9 @@
   <div class="search-model-box" ref="search-model-box">
       <div class="h-100 d-flex align-i tems-center justify-content-center">
         <div class="search-close-btn" @click="closeModal">+</div>
-        <form class="search-model-form" @submit.prevent="fugafuga">
-          <input type="text"  v-model="keyword"  id="search-input" placeholder="キーワードを入力">
-        </form>
+          <form class="search-model-form" @submit.prevent="submitText">
+            <input type="text"  v-model="keyword"  id="search-input" placeholder="キーワードを入力">
+          </form>S
       </div>
     </div>
 </template>
@@ -17,9 +17,9 @@ export default {
     }
   },
   methods: {
-    fugafuga(){
+    submitText(){
       this.closeModal();
-      this.$emit('hogehoge',this.keyword);
+      this.$emit('pass-value',this.keyword);
     },
     closeModal(){
       console.log("close modal in vue");

@@ -8,7 +8,7 @@
                     <div class="col-md-6">
                         <div class="gallery-img">
                             <div class="row">
-                                <div class="col-lg-8">
+                                <div class="col-lg-7">
                                     <img src="{{ $book->img_url }}" alt="書籍画像">
                                 </div>
                             </div>
@@ -18,6 +18,7 @@
                         <div class="small-content">
                             <h1>{{ $book->title }}</h1>
                         </div>
+                        <hr class="border">
                         <div class="small-content">
                             <h2>{{ $book->author }}</h2>
                         </div>
@@ -27,34 +28,41 @@
                         <div class="small-content">
                             <h2>{{ $book->release_date }}</h2>
                         </div>
-                        <h2>&nbsp;</h2>
-                        <h2>&nbsp;</h2>
+                        <hr class="border">
                         <div class="row">
-                            <div class="col-5">
+                            <div class="col-6">
                                 @include('books_favorite.good_button')
-                                <h3>高評価<span class="badge badge-secondary">{{ $book->goodCounts() }}</span></h3>
                             </div>
-                            <div class="offset-2 col-5">
+                            <div class="col-6">
                                 @include('books_favorite.bad_button')
-                                <h3>低評価<span class="badge badge-secondary">{{ $book->badCounts() }}</span></h3>
                             </div>
                         </div>
-                        <h2>&nbsp;</h2>
                         <u class="content_url">
                             <h2><a href="{{ $book->affiliate }}"><i class="fas fa-arrow-right"></i>楽天ブックスで購入する</a></h2>
                         </u>
+                        <hr class="border">
                         {{-- お気に入り／お気に入り解除ボタン --}}
                         @include('books_favorite.favorite_button', ['favorite' => $book])
-                        
                     </div>
                 </div>
-                <h2>&nbsp;</h2>
-                <h2 class="heading">レビュー一覧</h2>
-                    {{-- 投稿フォーム --}}
-                    @include('comments.form')
+                <hr class="border">
+            </div>
+        <h1 class="heading">レビュー一覧</h1>
+        <h1>&nbsp;</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="offset-md-1 col-md-9">
+                        {{-- 投稿フォーム --}}
+                        @include('comments.form')
+                    </div>
+                </div>
+                <hr class="border">
+                <div class="row">
+                    <div class="offset-md-1 col-md-10">
                     {{-- 投稿一覧 --}}
                     @include('comments.comments')
+                    </div>
+                </div>
             </div>
     </div>
-
 @endsection

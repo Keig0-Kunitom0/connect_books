@@ -5,14 +5,14 @@
           <h1 class="title_text">検索結果｢{{searchText}}｣</h1>
         </section>
         <section v-else >
-          <h1 class="title_text">こんな本はいかがですか？</h1>
+          <h1 class="title_text">こんな本はいかがですか?</h1>
         </section>
       </div>
       <div class="row">
         <div 
           v-for="book in books"
         　v-bind:key="book.id"
-          class="col-xl-3 col-lg-3 col-md-6 col-sm-6"
+          class="col-xl-4 col-lg-6 col-md-6 col-sm-11 book"
         >
           <div class="single-new-arrival mb-50 text-center wow fadeInUp" id="image_item" data-wow-duration="1s" data-wow-delay=".1s">
             <div class="popular-img">

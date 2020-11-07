@@ -1,9 +1,9 @@
 @if (count($comments) > 0)
     <ul class="list-unstyled">
         @foreach ($comments as $comment)
-            <li class="media mb-3">
+            <li class="media mb-5">
                 {{-- 投稿の所有者のメールアドレスをもとにGravatarを取得して表示 --}}
-                <img class="mr-2 rounded" src="{{ Gravatar::get($comment->user->email, ['size' => 50]) }}" alt="">
+                <img class="mr-2 rounded" src="{{ Gravatar::get($comment->user->email, ['size' => 50]) }}" class="card-img-top" alt="">
                 <div class="media-body">
                     <div class="name_color">
                         {{-- 投稿の所有者のユーザ詳細ページへのリンク --}}
@@ -12,12 +12,12 @@
                     </div>
                     <div class="row">
                         {{-- 投稿内容 --}}
-                        <p class="mb-0 col-md-6">{!! nl2br(e($comment->comment)) !!}</p>
-                        <div class="offset-md-3 col-md-3">
+                        <div class="col-md-6">
+                        <p class="mb-2">{!! nl2br(e($comment->comment)) !!}</p>
                         @if (Auth::id() == $comment->user_id)
                             {{-- 投稿削除ボタンのフォーム --}}
                             {!! Form::open(['route' => ['comments.destroy', $comment->id], 'method' => 'delete']) !!}
-                                {!! Form::submit('削除', ['class' => 'btn btn-danger btn-sm']) !!}
+                                {!! Form::submit('削除', ['class' => 'btn btn-danger delete_btn']) !!}
                             {!! Form::close() !!}
                         @endif
                         </div>
@@ -30,5 +30,5 @@
         {{ $comments->links() }}
     </ul>
 @else
-    <h4>この本のレビューはありません。</h4>
+    <h3 class="heading">この本のレビューはありません。</h3>
 @endif

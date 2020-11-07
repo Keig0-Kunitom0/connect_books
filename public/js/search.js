@@ -1926,9 +1926,9 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    fugafuga: function fugafuga() {
+    submitText: function submitText() {
       this.closeModal();
-      this.$emit('hogehoge', this.keyword);
+      this.$emit('pass-value', this.keyword);
     },
     closeModal: function closeModal() {
       console.log("close modal in vue");
@@ -20402,7 +20402,7 @@ var render = function() {
               on: {
                 submit: function($event) {
                   $event.preventDefault()
-                  return _vm.fugafuga($event)
+                  return _vm.submitText($event)
                 }
               }
             },
@@ -20432,7 +20432,8 @@ var render = function() {
                 }
               })
             ]
-          )
+          ),
+          _vm._v("S\n    ")
         ]
       )
     ]
@@ -20470,7 +20471,7 @@ var render = function() {
           ])
         : _c("section", [
             _c("h1", { staticClass: "title_text" }, [
-              _vm._v("こんな本はいかがですか？")
+              _vm._v("こんな本はいかがですか?")
             ])
           ])
     ]),
@@ -20484,7 +20485,7 @@ var render = function() {
             "div",
             {
               key: book.id,
-              staticClass: "col-xl-3 col-lg-3 col-md-6 col-sm-6"
+              staticClass: "col-xl-4 col-lg-6 col-md-6 col-sm-11 book"
             },
             [
               _c(

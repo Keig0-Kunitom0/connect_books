@@ -27,7 +27,7 @@ class Book extends Model
     
     public function loadRelationshipCounts()
     {
-        $this->loadCount(['comments']);
+        $this->loadCount('comments');
     }
     
     public function goodCounts()
