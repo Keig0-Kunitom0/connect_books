@@ -2,7 +2,8 @@
 
 ## サービスの概要
 - 楽天booksAPIを使用して書籍検索、お気に入り登録できるサービスです。また、書籍に対してレビューを書き込めたり、グッド、バッドボタンを押せるなどの評価機能もついています。
-- herokuURL →<https://connect-books.herokuapp.com/>
+- herokuURL→<https://connect-books.herokuapp.com/>
+- 機能確認の動画→<https://www.youtube.com/watch?v=R1N4Mj_y0VQ>
 
 ## 利用技術、ライブラリ
 - 楽天booksAPI <https://webservice.rakuten.co.jp/api/booksbooksearch/>
