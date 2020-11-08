@@ -8,7 +8,7 @@
 - https://cacoo.com/diagrams/O0x7xvpZ2DG5LmpZ-3856A.png
 
 ## 利用技術、ライブラリ
-- 楽天booksAPI<https://webservice.rakuten.co.jp/api/booksbooksearch/>
+- 楽天booksAPI <https://webservice.rakuten.co.jp/api/booksbooksearch/>
 - PHP
 - javascript
 - Laravel
