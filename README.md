@@ -5,8 +5,8 @@
 - herokuURL →<https://connect-books.herokuapp.com/>
 
 ## 設計書
-- https://cacoo.com/diagrams/O0x7xvpZ2DG5LmpZ-A8367.png
-- https://cacoo.com/diagrams/O0x7xvpZ2DG5LmpZ-3856A.png
+- https://cacoo.com/diagrams/O0x7xvpZ2DG5LmpZ/A8367
+- https://cacoo.com/diagrams/O0x7xvpZ2DG5LmpZ/3856A
 
 ## 利用技術、ライブラリ
 - 楽天booksAPI <https://webservice.rakuten.co.jp/api/booksbooksearch/>
