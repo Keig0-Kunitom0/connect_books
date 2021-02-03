@@ -64,5 +64,6 @@
                     </div>
                 </div>
             </div>
+            <auth-check :authorized='@json(Auth::check())'></auth-check>
     </div>
 @endsection

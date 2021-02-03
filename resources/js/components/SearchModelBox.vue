@@ -4,7 +4,7 @@
         <div class="search-close-btn" @click="closeModal">+</div>
           <form class="search-model-form" @submit.prevent="submitText">
             <input type="text"  v-model="keyword"  id="search-input" placeholder="キーワードを入力">
-          </form>S
+          </form>
       </div>
     </div>
 </template>

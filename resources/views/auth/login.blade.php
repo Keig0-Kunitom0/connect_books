@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="text-center">
-        <h1>Log in</h1>
+        <h1>ログイン</h1>
     </div>
 
     <div class="row">
@@ -21,9 +21,12 @@
 
                 {!! Form::submit('ログイン', ['class' => 'btn btn-primary btn-block']) !!}
             {!! Form::close() !!}
-
+            
+            <h4>&nbsp;</h4>
             <!--{{-- ユーザ登録ページへのリンク --}}-->
-            <!--<p class="mt-2">登録がお済みでない方{!! link_to_route('signup.get', '登録!')!!}</p>-->
+           <u class="content_url">
+                <a href="{{ route('signup.get') }}" class="card-text"><h4><i class="fas fa-arrow-right"></i>初めての方はこちら</h4></p></a>
+            </u>
         </div>
     </div>
 @endsection

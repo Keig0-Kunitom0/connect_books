@@ -176,7 +176,7 @@ quagga__WEBPACK_IMPORTED_MODULE_0___default.a.onDetected(function (data) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/ubuntu/environment/connect-books/resources/js/barcode.js */"./resources/js/barcode.js");
+module.exports = __webpack_require__(/*! /home/ubuntu/environment/connect_books/resources/js/barcode.js */"./resources/js/barcode.js");
 
 
 /***/ })

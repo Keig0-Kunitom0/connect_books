@@ -43,12 +43,15 @@ h1.heading{
     font-size: 22px
 }
 
-.content_url h2 a:hover {
+
+.content_url h4 a:hover {
     background-color: #9F78FF;
 }
 
+
 .ti-search {
-    background: #F6F8FE;
+    background: #9F78FF;
+    color: #fff;
     border-radius: 50%;
     padding: 13px 13px;
     font-size: 20px;
@@ -174,5 +177,10 @@ div .popular-img img{
 }
 
 hr .border{
-    color: #9F78FF;
+    color:#9F78FF;
 }
+
+#image_item[data-v-6cc59560]{
+    border-color:#9F78FF;
+}
+
